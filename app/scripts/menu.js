@@ -163,6 +163,167 @@ var menu = [
         imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Red_roast_duck_curry.jpg/1024px-Red_roast_duck_curry.jpg'
       }
     ]
+  },
+  {
+    category: 'Rice dishes',
+    items:
+    [
+      {
+        title: 'Chok',
+        description: 'Of Chinese origin, it is a rice congee with minced chicken or pork. Mixing an egg in with the congee is optional.',
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Jok_mu_sap.JPG/1024px-Jok_mu_sap.JPG'
+      },
+      {
+        title: 'Khao kan chin',
+        description: 'A dish of the Tai Yai (Shan people) of Burma and northern Thailand, it is rice that is mixed with pork blood and steamed inside a banana leaf. Khao kan chin is served with cucumber, onions and fried, dried chillies.',
+        price: 9,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/2013_Khao_kan_chin.jpg/640px-2013_Khao_kan_chin.jpg'
+      },
+      {
+        title: 'Khao kha mu',
+        description: "Steamed rice is served with sliced pig's trotters which has been simmered in soy sauce and five spice powder. It is always served with a sweet spicy dipping sauce, fresh bird's eye chillies and cloves of garlic on the side. Boiled egg and a clear broth on the side are optional.",
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Khao_kha_mu_02.JPG/640px-Khao_kha_mu_02.JPG'
+      },
+      {
+        title: 'Khao mok kai',
+        description: 'The Thai version of a "chicken biryani". The name literally means "rice covered chicken". This Thai-Muslim dish is made by cooking rice together with the chicken curry.',
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Khao_mok_kai.JPG/1024px-Khao_mok_kai.JPG'
+      },
+      {
+        title: 'Khao mok nuea',
+        description: 'The Thai version of a "beef biryani".',
+        price: 9,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Khao_mok_nuea.jpg/640px-Khao_mok_nuea.jpg'
+      },
+      {
+        title: 'Khao man kai',
+        description: 'Rice steamed with garlic served with sliced chicken, chicken broth and a spicy dipping sauce.',
+        price: 9,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/2013_Khao_man_kai_Chiang_Mai.jpg/640px-2013_Khao_man_kai_Chiang_Mai.jpg'
+      },
+      {
+        title: 'Khao mu krop',
+        description: 'Rice and crispy pork that is often, as here in this image, served with boiled egg and a bowl of broth. The sauce that always comes with khao mu krop is here served separately in the bowl at the top of the image.',
+        price: 11,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Khao_mu_krop.jpg/1024px-Khao_mu_krop.jpg'
+      },
+      {
+        title: 'Khao na pet',
+        description: 'Boiled rice with roast duck and duck broth on the side. It is served with sliced chillies in soy sauce as a condiment.',
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Khao_na_pet.JPG/640px-Khao_na_pet.JPG'
+      }
+    ]
+  },
+  {
+    category: 'Noodle dishes',
+    items:
+    [
+      {
+        title: 'Bami haeng pet',
+        description: 'Egg noodles served "dry" with slices of braised duck, and often, as shown on the image, together with "blood tofu". The broth is served on the side. It is originally a Chinese dish.',
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bami_haeng.jpg/640px-Bami_haeng.jpg'
+      },
+      {
+        title: 'Bami mu daeng',
+        description: 'Originally a Chinese dish, it is now common in Thailand. Often served with chillies in vinegar, and dried chilli flakes.',
+        price: 11,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Bami_mu_daeng_kiao.JPG/1024px-Bami_mu_daeng_kiao.JPG'
+      },
+      {
+        title: 'Khanom chin kaeng khiao wan kai',
+        description: 'This noodle dish consists of green chicken curry served over khanom chin, fresh Thai rice noodles. It is usually accompanied by a selection of raw vegetables and herbs on the side. The chicken meat used in this particular version is chicken feet.',
+        price: 12,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Khanom_chin_kaeng_kiao_wan_kai.jpg/640px-Khanom_chin_kaeng_kiao_wan_kai.jpg'
+      },
+      {
+        title: 'Khanom chin nam ngiao',
+        description: 'A speciality of Northern Thailand, it is Thai fermented rice noodles served with pork or chicken blood tofu in a sauce made with pork broth and tomato, crushed fried dry chillies, pork blood, dry fermented soy bean, and dried red kapok flowers.',
+        price: 11,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Khanom_chin_nam_ngiao_supoe.jpg/800px-Khanom_chin_nam_ngiao_supoe.jpg'
+      },
+      {
+        title: 'Khanom chin namya',
+        description: 'Thai rice noodles served with a fish based sauce called nam ya.',
+        price: 10,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Khanom_Jeen_Nam_Yaa.jpg/1024px-Khanom_Jeen_Nam_Yaa.jpg'
+      },
+      {
+        title: 'Khao soi',
+        description: 'Boiled as well as crispy fried egg noodles (bami) are served in a curry soup. The version with chicken is called khao soi kai, with beef it is called khao soi nuea.',
+        price: 11,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Khao_soi_Chiang_Mai.jpg/1024px-Khao_soi_Chiang_Mai.jpg'
+      },
+      {
+        title: 'Khao soi nam na',
+        description: 'Somewhat similar to khao soi Mae Sai, this variant from the eastern part of Chiang Rai Province is made with wide rice noodles in a clear pork broth. A spoonful of nam phrik ong (a sauce made from minced pork, tomato, fermented soy bean or shrimp paste, and dried chillies) is heaped on top of the noodles (nam na literally means "with sauce on top").',
+        price: 12,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Khao_soi_nam_na.jpg/640px-Khao_soi_nam_na.jpg'
+      }
+    ]
+  },
+  {
+    category: 'desserts',
+    items: [
+      {
+        title: 'Foi thong',
+        description: 'The name translates to "golden threads", it is a sweet snack or dessert of strings of egg yolk shortly boiled in sugar syrup. This, and other egg-based sweets such as sangkhaya, were introduced to the royal court of Ayutthaya by Maria Guyomar de Pinha in the 17th century CE.',
+        price: 6,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Foi_thong.jpg/640px-Foi_thong.jpg'
+      },
+      {
+        title: 'Khanom khrok',
+        description: 'Small coconut hotcakes with different fillings. These are made on a special cast-iron pan with indentations. Two halves are eventually stuck to one another to form the finished mini-pancake.',
+        price: 5,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Khanom_khrok.jpg/640px-Khanom_khrok.jpg'
+      },
+      {
+        title: 'Khanom tako',
+        description: 'Jasmine scented coconut pudding set in cups of fragrant pandan leaf.',
+        price: 6,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Khanom_tako_sai.jpg/640px-Khanom_tako_sai.jpg'
+      },
+      {
+        title: 'Khanom tom',
+        description: 'These sweets are made by boiling balls of dough made from glutinous rice powder, coconut cream, grated coconut, sugar and flavourings, and then covering them with more grated coconut.',
+        price: 7,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Khanom_tom.JPG/640px-Khanom_tom.JPG'
+      }
+    ]
+  },
+  {
+    category: 'Drinks',
+    items:
+    [
+      {
+        title: 'Cha yen',
+        description: 'It is made from strongly brewed black tea ("red tea" in East Asia). Additional ingredients may include orange blossom water, star anise, crushed tamarind seed and sometimes other spices. The tea is sweetened with sugar and condensed milk and served chilled.',
+        price: 4,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Cha_yen.JPG/640px-Cha_yen.JPG'
+      },
+      {
+        title: 'Kafae boran',
+        description: 'Kafae boran literally translates to "ancient/traditional coffee". It is a strong coffee that is served with sweetened condensed milk, similar in taste to the kopi that is served at kopi tiam (traditional coffee shops) of Malaysia and Singapore. It is usually made with robusta coffee beans, by steeping the grounds inside a brewing "sock".',
+        price: 4,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Kafae_boran_Chiang_Mai.jpg/640px-Kafae_boran_Chiang_Mai.jpg'
+      },
+      {
+        title: 'Krating Daeng',
+        description: 'An energy drink and the origin of Red Bull.',
+        price: 4,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Krating_Daeng.jpg/640px-Krating_Daeng.jpg'
+      },
+      {
+        title: 'Nam bai bua bok',
+        description: 'A refreshing drink made from the leaves of the Asiatic Pennywort (Centella asiatica).',
+        price: 4,
+        imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Nam_bai_bua_bok.JPG/640px-Nam_bai_bua_bok.JPG'
+      },
+    ]
   }
 
 
