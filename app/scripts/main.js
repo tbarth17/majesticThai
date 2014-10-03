@@ -4,10 +4,17 @@
 var FoodItemView = Backbone.View.extend({
     tagName : 'li',
 
+    template: _.template($('#food-items').text()),
+
     initialize: function(options){
       options = options || {};
       this.$container = options.$container;
       this.$container.append(this.el);
+    },
+
+    render: function(){
+      //this.$container.empty();
+      this.$el.html(this.template(this.model));
     }
 });
 
@@ -36,7 +43,11 @@ var FoodListView = Backbone.View.extend({
       console.log(this);
       _.each(this, function(x){
         _.each(x.items, function(y){
-            console.log(y);
+          var foodItemView = new FoodItemView({
+            model: y,
+            $container: $('.food-list')
+          });
+          foodItemView.render();
         });
       });
     },
