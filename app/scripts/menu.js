@@ -22,7 +22,7 @@ var menu = [
       },
       {
         title: 'Naem khluk',
-        description: 'Naem sausage (pork fermented with sticky rice)[13] is mixed with boiled rice and then deep-fried. The salad is made by crumbling the deep-fried balls and mixing in sliced shallots, dried chillies, fish sauce and lime juice. It is served with raw vegetables and herbs.',
+        description: 'Naem sausage (pork fermented with sticky rice) is mixed with boiled rice and then deep-fried. The salad is made by crumbling the deep-fried balls and mixing in sliced shallots, dried chillies, fish sauce and lime juice. It is served with raw vegetables and herbs.',
         price: 9,
         imgUrl: 'http://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Naem_khluk_1.jpg/640px-Naem_khluk_1.jpg'
       },
@@ -267,7 +267,7 @@ var menu = [
     ]
   },
   {
-    category: 'desserts',
+    category: 'Desserts',
     items: [
       {
         title: 'Foi thong',
