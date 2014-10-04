@@ -1,10 +1,31 @@
 (function() {
   'use strict';
 
-var FoodItemView = Backbone.View.extend({
-    tagName : 'li',
+var OrderView = Backbone.View.extend({
+    tagName: 'ul',
+    className: 'order-list',
 
-    template: _.template($('#food-items').text()),
+    initialize: function(options){
+      options = options || {};
+      this.$container = options.$container;
+      this.$container.append(this.el);
+    },
+
+});
+
+var FoodItemView = Backbone.View.extend({
+    tagName: 'li',
+    className: 'food-items',
+
+    template: _.template($('#food-items-template').text()),
+
+    events: {
+      'click button': 'addOrderItem'
+    },
+
+    addOrderItem: function(){
+      console.log(this);
+    },
 
     initialize: function(options){
       options = options || {};
@@ -25,25 +46,21 @@ var FoodListView = Backbone.View.extend({
       options = options || {};
       this.$container = options.$container;
       this.$container.append(this.el);
-    },
-
-    render: function(){
-      this.$el.empty();
     }
-
 });
 
   var CategoryItemView = Backbone.View.extend({
     tagName: 'li',
+    className: 'category-items',
 
-    template: _.template('<%= category %>'),
+    template: _.template('<h3><%= category %><h3>'),
 
     events: {
       'click': 'populateFoodList'
     },
 
     populateFoodList: function(options) {
-      console.log(this);
+      $('.food-list').empty();
       _.each(this, function(x){
         _.each(x.items, function(y){
           var foodItemView = new FoodItemView({
@@ -90,24 +107,23 @@ var FoodListView = Backbone.View.extend({
     _.each(menu, function(category){
       self.renderChild(category);
     });
-
   }
 
 });
 
 $(document).ready(function() {
-var categoriesView = new CategoriesView({
-  $container: $('.categories-container')
+    var categoriesView = new CategoriesView({
+      $container: $('.categories-container')
+    });
+        categoriesView.render();
+    var foodListView = new FoodListView({
+      $container: $('.food-items-container')
+    });
+
+    var orderView = new OrderView({
+      $container: $('.order-items-container')
+    });
+
 });
-    categoriesView.render();
-var foodListView = new FoodListView({
-  $container: $('.food-items-container')
-});
-
-
-
-});
-
-
 
 }());

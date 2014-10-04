@@ -26,11 +26,14 @@
 
     <div class='food-items-container'></div>
 
-    <script type='text/template' id='food-items'>
-      <%= title %>
+    <div class='order-items-container'></div>
+
+    <script type='text/template' id='food-items-template'>
+      <h4><%= title %></h4>
       <%= description %>
-      <img src='<%= imgUrl %>'>
-      <%= price %>
+      <div class='food-pics' style="background-image: url(<%= imgUrl %>)"></div>
+      <span>Price: $</span><%= price %>
+      <button>Add Item</button>
     </script>
 
     <!-- build:js scripts/vendor.js -->
