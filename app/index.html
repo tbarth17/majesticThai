@@ -22,19 +22,28 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div class='categories-container'></div>
+    <div class='master-container'>
+        <div class='categories-container'></div>
 
-    <div class='food-items-container'></div>
+        <div class='food-items-container'></div>
 
-    <div class='order-items-container'></div>
+        <div class='order-items-container'>
+          <h3>Your Order</h3>
+        </div>
+    </div><!--master-container-->
 
-    <script type='text/template' id='food-items-template'>
-      <h4><%= title %></h4>
-      <%= description %>
-      <div class='food-pics' style="background-image: url(<%= imgUrl %>)"></div>
-      <span>Price: $</span><%= price %>
-      <button>Add Item</button>
-    </script>
+        <script type='text/template' id='food-items-template'>
+          <h4 class='food-items-heading'><%= title %></h4>
+          <%= description %>
+          <div class='food-pics' style="background-image: url(<%= imgUrl %>)"></div>
+          <span>Price: $</span><%= price %>
+          <button>Add Item</button>
+        </script>
+
+        <script type='text/template' id='order-items-template'>
+          <h4 class='order-item-heading'><%= title %></h4>
+          <span>Price: $</span><%= price %>
+        </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

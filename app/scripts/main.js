@@ -1,6 +1,23 @@
 (function() {
   'use strict';
 
+var OrderItemView = Backbone.View.extend({
+    tagName: 'li',
+    className: 'order-item',
+
+    template: _.template($('#order-items-template').text()),
+
+    initialize: function(options){
+      options = options || {};
+      this.$container = options.$container;
+      this.$container.append(this.el);
+    },
+
+    render: function(){
+      this.$el.html(this.template(this.model));
+    }
+});
+
 var OrderView = Backbone.View.extend({
     tagName: 'ul',
     className: 'order-list',
@@ -24,7 +41,12 @@ var FoodItemView = Backbone.View.extend({
     },
 
     addOrderItem: function(){
-      console.log(this);
+      var orderItemView = new OrderItemView({
+        model: this.model,
+        $container: $('.order-list')
+      });
+      console.log(this.model);
+      orderItemView.render();
     },
 
     initialize: function(options){
