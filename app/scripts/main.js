@@ -13,7 +13,6 @@ var FoodItemView = Backbone.View.extend({
     },
 
     render: function(){
-      //this.$container.empty();
       this.$el.html(this.template(this.model));
     }
 });
@@ -27,6 +26,10 @@ var FoodListView = Backbone.View.extend({
       this.$container = options.$container;
       this.$container.append(this.el);
     },
+
+    render: function(){
+      this.$el.empty();
+    }
 
 });
 
