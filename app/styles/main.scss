@@ -38,23 +38,38 @@ $border-gray: #b6b6b6;
 }
 
 .food-items {
-  /* height: em(250px); */
   @include span-columns(12);
+  @include omega;
   list-style: none;
   outline: 1px solid $border-gray;
   padding: 10px;
+  margin-bottom: 5px;
 
 }
 
 .category-items {
   list-style: none;
-  height: 60px;
-  width: 200px;
+  /* height: 60px; */
+  @include span-columns(12);
   border: 1px solid $border-gray;
   background-color: #e4e7e5;
   text-align: center;
 }
 
+.order-list {
+  outline: 1px $border-gray solid;
+}
+
 .order-item {
   list-style: none;
+}
+
+.order-item-heading {
+  margin: 0;
+  margin-right: 10px;
+  float: left;
+}
+
+.total-price {
+  float: right;
 }

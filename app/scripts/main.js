@@ -1,6 +1,20 @@
 (function() {
   'use strict';
 
+var OrderModel = Backbone.Model.extend({
+    defaults: {
+      title: '',
+      price: ''
+    },
+
+    firebase: new Backbone.Firebase("https://torid-fire-5697.firebaseio.com")
+});
+
+var OrderCollection = Backbone.Collection.extend({
+    model: OrderModel,
+    firebase: "https://torid-fire-5697.firebaseio.com"
+});
+
 var OrderItemView = Backbone.View.extend({
     tagName: 'li',
     className: 'order-item',
@@ -43,9 +57,13 @@ var FoodItemView = Backbone.View.extend({
     addOrderItem: function(){
       var orderItemView = new OrderItemView({
         model: this.model,
-        $container: $('.order-list')
+        $container: $('.order-list'),
+        collection: orderCollection,
       });
-      console.log(this.model);
+      window.order = new OrderModel({title: this.model.title, price: this.model.price});
+      this.collection.add(order);
+      console.log(this.collection);
+      // console.log(this.model);
       orderItemView.render();
     },
 
@@ -87,11 +105,13 @@ var FoodListView = Backbone.View.extend({
         _.each(x.items, function(y){
           var foodItemView = new FoodItemView({
             model: y,
-            $container: $('.food-list')
+            $container: $('.food-list'),
+            collection: orderCollection
           });
           foodItemView.render();
         });
       });
+
     },
 
     initialize: function(options){
@@ -134,6 +154,8 @@ var FoodListView = Backbone.View.extend({
 });
 
 $(document).ready(function() {
+    window.orderCollection = new OrderCollection();
+
     var categoriesView = new CategoriesView({
       $container: $('.categories-container')
     });
@@ -143,7 +165,8 @@ $(document).ready(function() {
     });
 
     var orderView = new OrderView({
-      $container: $('.order-items-container')
+      $container: $('.order-items-container'),
+      collection: orderCollection
     });
 
 });
