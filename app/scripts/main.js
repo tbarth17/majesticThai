@@ -10,7 +10,7 @@ var OrderModel = Backbone.Model.extend({
 
 var OrderCollection = Backbone.Firebase.Collection.extend({
     model: OrderModel,
-    firebase: "https://torid-fire-5697.firebaseio.com"
+    firebase: "https://majestic-thai.firebaseio.com"
 });
 
 var SubmitOrderView = Backbone.View.extend({
@@ -94,7 +94,7 @@ var FoodItemView = Backbone.View.extend({
       });
       window.order = new OrderModel({title: this.model.title, price: this.model.price});
       this.collection.add(order);
-      console.log(this.collection);
+      // console.log(this.collection);
       // console.log(this.model);
       orderItemView.render();
     },
