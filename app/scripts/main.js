@@ -3,21 +3,52 @@
 
 var OrderModel = Backbone.Model.extend({
     defaults: {
-      title: '',
-      price: ''
-    },
-
-    firebase: new Backbone.Firebase("https://torid-fire-5697.firebaseio.com")
+      title: 'Order Complete',
+      price: 'Order Complete'
+    }
 });
 
-var OrderCollection = Backbone.Collection.extend({
+var OrderCollection = Backbone.Firebase.Collection.extend({
     model: OrderModel,
     firebase: "https://torid-fire-5697.firebaseio.com"
+});
+
+var SubmitOrderView = Backbone.View.extend({
+    className: 'order-submit',
+
+    events: {
+      'click button': 'submitOrder',
+    },
+
+    submitOrder: function(){
+      this.collection.create();
+      alert('Thank you for your order!');
+      document.location.reload(true);
+    },
+
+    template: _.template($('#your-order-template').text()),
+
+    initialize: function(options){
+      options = options || {};
+      this.$container = options.$container;
+      this.$container.prepend(this.el);
+    },
+
+    render: function(){
+      this.$el.html(this.template(this.model));
+    }
 });
 
 var OrderItemView = Backbone.View.extend({
     tagName: 'li',
     className: 'order-item',
+    events: {
+      'click button': 'removeItem'
+    },
+
+    removeItem: function(){
+      this.model.destroy();
+    },
 
     template: _.template($('#order-items-template').text()),
 
@@ -25,6 +56,7 @@ var OrderItemView = Backbone.View.extend({
       options = options || {};
       this.$container = options.$container;
       this.$container.append(this.el);
+      // this.listenTo(this.model, 'destroy', this.remove);
     },
 
     render: function(){
@@ -111,7 +143,6 @@ var FoodListView = Backbone.View.extend({
           foodItemView.render();
         });
       });
-
     },
 
     initialize: function(options){
@@ -169,6 +200,11 @@ $(document).ready(function() {
       collection: orderCollection
     });
 
+    var submitOrderView = new SubmitOrderView({
+      $container: $('.order-items-container'),
+      collection: orderCollection
+    });
+    submitOrderView.render();
 });
 
 }());

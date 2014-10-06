@@ -15,6 +15,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -22,28 +23,34 @@
     <!-- endbuild -->
   </head>
   <body>
+    <header><h1 class="maj-title">Majestic Thai</h1></header>
     <div class='master-container'>
         <div class='categories-container'></div>
 
         <div class='food-items-container'></div>
 
-        <div class='order-items-container'>
-          <h3>Your Order:</h3>
-          <h5>Total: <div class='total-price'></div></h5>
-        </div>
+        <div class='order-items-container'></div>
     </div><!--master-container-->
 
         <script type='text/template' id='food-items-template'>
           <h4 class='food-items-heading'><%= title %></h4>
           <%= description %>
           <div class='food-pics' style="background-image: url(<%= imgUrl %>)"></div>
+          <div class='price-add-container'>
           <span>Price: $</span><%= price %>
           <button>Add Item</button>
+          </div>
         </script>
 
         <script type='text/template' id='order-items-template'>
           <h4 class='order-item-heading'><%= title %></h4>
           <span>Price: $</span><%= price %>
+          <button>Remove</button>
+        </script>
+
+        <script type='text/template' id='your-order-template'>
+          <h3>Your Order:</h3>
+          <button class='submit-button'>Submit</button>
         </script>
 
     <!-- build:js scripts/vendor.js -->

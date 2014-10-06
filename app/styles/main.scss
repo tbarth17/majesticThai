@@ -5,6 +5,22 @@
 // Custom Styles
 $border-gray: #b6b6b6;
 
+header {
+  @include span-columns(12);
+  background-image: url('../images/header.jpg');
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.maj-title {
+  text-align: center;
+  font-size: 106px;
+  font-family: 'Tangerine';
+  color: #a8a353;
+  margin-top: 91px;
+}
+
 .master-container {
   @include outer-container;
 }
@@ -56,6 +72,10 @@ $border-gray: #b6b6b6;
   text-align: center;
 }
 
+.price-add-container{
+  float: right;
+}
+
 .order-list {
   outline: 1px $border-gray solid;
 }
@@ -72,4 +92,8 @@ $border-gray: #b6b6b6;
 
 .total-price {
   float: right;
+}
+
+.submit-button {
+  width: 100%
 }
