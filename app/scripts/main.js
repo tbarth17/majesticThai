@@ -5,12 +5,19 @@ var OrderModel = Backbone.Model.extend({
     defaults: {
       title: 'Order Complete',
       price: 'Order Complete'
-    }
+    },
+    firebase: new Backbone.Firebase("https://majestic-thai.firebaseio.com")
 });
 
 var OrderCollection = Backbone.Firebase.Collection.extend({
     model: OrderModel,
-    firebase: "https://majestic-thai.firebaseio.com"
+    firebase: "https://majestic-thai.firebaseio.com/orders/" + Date.now(),
+
+    totalPrice: function(){
+      return this.reduce(function(total, model){
+        return total + model.get('price');
+      }, 0);
+    }
 });
 
 var SubmitOrderView = Backbone.View.extend({
@@ -47,6 +54,7 @@ var OrderItemView = Backbone.View.extend({
     },
 
     removeItem: function(){
+      console.log(this.model);
       this.model.destroy();
     },
 
@@ -56,23 +64,34 @@ var OrderItemView = Backbone.View.extend({
       options = options || {};
       this.$container = options.$container;
       this.$container.append(this.el);
-      // this.listenTo(this.model, 'destroy', this.remove);
+      this.listenTo(this.model, 'destroy', this.remove);
     },
 
     render: function(){
-      this.$el.html(this.template(this.model));
+      this.$el.html(this.template(this.model.attributes));
     }
 });
 
 var OrderView = Backbone.View.extend({
     tagName: 'ul',
     className: 'order-list',
-
+    
     initialize: function(options){
       options = options || {};
       this.$container = options.$container;
       this.$container.append(this.el);
+      this.listenTo(this.collection, 'add', this.renderChild);
     },
+
+    renderChild: function(food){
+      var orderItemView = new OrderItemView({
+        model: food,
+        $container: $('.order-list'),
+        collection: this.collection,
+      });
+      orderItemView.render();
+
+    }
 
 });
 
@@ -87,16 +106,10 @@ var FoodItemView = Backbone.View.extend({
     },
 
     addOrderItem: function(){
-      var orderItemView = new OrderItemView({
-        model: this.model,
-        $container: $('.order-list'),
-        collection: orderCollection,
-      });
       window.order = new OrderModel({title: this.model.title, price: this.model.price});
       this.collection.add(order);
-      // console.log(this.collection);
+      console.log(this.collection);
       // console.log(this.model);
-      orderItemView.render();
     },
 
     initialize: function(options){
