@@ -44,6 +44,7 @@ gulp.task('extras', function () {
 });
 
 gulp.task('clean', function (cb) {
+  $.cache.clearAll();
   rimraf('.tmp', function () {
     rimraf('dist', cb);
   });
