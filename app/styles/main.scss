@@ -57,7 +57,7 @@ body {
 .thai-food-picture {
   @include span-columns(12);
   height: 350px;
-  background: url(/images/thai-food.jpg);
+  background: url('../images/thai-food.jpg');
   background-position: center;
   background-size: cover;
   border: 1px solid #B6B6B6;
