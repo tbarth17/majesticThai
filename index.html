@@ -20,9 +20,25 @@
     <div class='master-container'>
         <div class='categories-container'></div>
 
-        <div class='food-items-container'></div>
+        <div class='food-items-container'>
+          <div class='clear'>
+            <div class='dummy-data'>
+              <h2>Welcome to Majestic Thai!</h2>
+              <h3>Harmony and Balance in Every Plate</h3>
+              <div class='thai-food-picture'></div>
+              <h4>Authentic Thai Cuisine Prepared Using Only The Freshest Ingredients</h4>
+                <div>
+                  You'll love the warm, traditional atmosphere at Majestic Thai. Our extensive menu
+                  is prepared with a delicate balance of the spices to create a sophisticated,
+                  delicious, and unique dining adventure. A gourmet delight for those who know and
+                  love authentic Thai food.
+                </div>
+            </div>
+          </div>
+        </div>
 
-        <div class='order-items-container'></div>
+        <div class='order-items-container'>
+        </div>
     </div><!--master-container-->
 
         <script type='text/template' id='food-items-template'>
@@ -36,9 +52,11 @@
         </script>
 
         <script type='text/template' id='order-items-template'>
-          <h4 class='order-item-heading'><%= title %></h4>
-          <span>Price: $</span><%= price %>
-          <button>Remove</button>
+          <div class='order-item-container'>
+            <button>X</button>
+            <div class='order-item-heading'><%= title %></div>
+            <span>Price: $</span><%= price %>
+          </div>
         </script>
 
         <script type='text/template' id='your-order-template'>
