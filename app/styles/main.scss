@@ -21,6 +21,10 @@ header {
   margin-top: 91px;
 }
 
+body {
+  background: #F6F6F6;
+}
+
 .master-container {
   @include outer-container;
 }
@@ -30,46 +34,95 @@ header {
 }
 
 .food-items-container {
-  @include span-columns(6);
+  @include span-columns(5.5);
+
 }
 
 .order-items-container {
-  @include span-columns(3);
+  @include span-columns(3.5);
+}
+
+.dummy-data {
+  border: 1px solid #B6B6B6;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background: white;
+
+    h2 {
+      margin: 0;
+    }
+}
+
+.thai-food-picture {
+  @include span-columns(12);
+  height: 350px;
+  background: url(/images/thai-food.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #B6B6B6;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .food-items-heading {
   margin: 0;
   padding: 5px 0 5px 0;
-  outline: 1px solid $border-gray;
+  border: 1px solid $border-gray;
+  border-radius: 5px;
   background: #f1f1f1;
   margin-bottom: 5px;
   text-align: center;
 }
 
+.food-list {
+  padding: 0;
+}
+
 .food-pics {
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 15px;
   background-size: cover;
   background-position: center center;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
 
 .food-items {
   @include span-columns(12);
   @include omega;
   list-style: none;
-  outline: 1px solid $border-gray;
+  border: 1px solid $border-gray;
+  border-radius: 5px;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  background: white;
+
+  button {
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #808080;
+    }
+  }
 
 }
 
 .category-items {
   list-style: none;
-  /* height: 60px; */
   @include span-columns(12);
   border: 1px solid $border-gray;
+  border-radius: 5px;
   background-color: #e4e7e5;
   text-align: center;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: #808080;
+    cursor: pointer;
+  }
 }
 
 .price-add-container{
@@ -77,17 +130,39 @@ header {
 }
 
 .order-list {
-  outline: 1px $border-gray solid;
+  border: 1px $border-gray solid;
+  padding: 15px;
+  border-radius: 5px;
+  background: white;
 }
 
 .order-item {
   list-style: none;
+
+  button{
+    float: left;
+    margin-right: 10px;
+    margin-top: -4px;
+    border-radius: 4px;
+    height: 25px;
+    width: 25px;
+    font-size: 10px;
+  }
 }
 
 .order-item-heading {
   margin: 0;
   margin-right: 10px;
+  font-weight: bold;
   float: left;
+}
+
+.order-item-container {
+  padding: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1px solid $border-gray;
+  border-radius: 5px;
 }
 
 .total-price {
@@ -95,5 +170,10 @@ header {
 }
 
 .submit-button {
-  width: 100%
+  width: 100%;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #808080;
+  }
 }

@@ -75,7 +75,7 @@ var OrderItemView = Backbone.View.extend({
 var OrderView = Backbone.View.extend({
     tagName: 'ul',
     className: 'order-list',
-    
+
     initialize: function(options){
       options = options || {};
       this.$container = options.$container;
@@ -146,6 +146,7 @@ var FoodListView = Backbone.View.extend({
 
     populateFoodList: function(options) {
       $('.food-list').empty();
+      $('.clear').empty();
       _.each(this, function(x){
         _.each(x.items, function(y){
           var foodItemView = new FoodItemView({
