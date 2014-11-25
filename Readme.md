@@ -1,3 +1,1 @@
-## Yo, I'm a Readme
-
-You should probably update me so people looking at your code have an idea what it is being used for :)
+Majestic Thai is a Backbone application created as a website for a Thai restaurant. It uses Firebase as a back-end and creates orders that can be displayed for the kitchen to view. Incorporates fluid design with Bourbon Neat and a custom built API for the menu items data.

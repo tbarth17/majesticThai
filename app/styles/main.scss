@@ -33,13 +33,17 @@ body {
   @include span-columns(3);
 }
 
+.categories-list {
+  padding: 0;
+}
+
 .food-items-container {
-  @include span-columns(5.5);
+  @include span-columns(6);
 
 }
 
 .order-items-container {
-  @include span-columns(3.5);
+  @include span-columns(3);
 }
 
 .dummy-data {
